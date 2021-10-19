@@ -16,7 +16,7 @@ public class CompBinTree {
 //        compBinTree.postOrder(root);
     }
 
-    private static TreeNode generateTree(Integer[] tree, int index) {
+    public static TreeNode generateTree(Integer[] tree, int index) {
         TreeNode treeNode = null;
         if(index < tree.length ) {
             if(tree[index] == null){
