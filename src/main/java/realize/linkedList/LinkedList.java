@@ -6,7 +6,7 @@ package realize.linkedList;
  **/
 public class LinkedList<E>  {
 
-    class Node<E> {
+    public class Node<E> {
         public E data;
         public Node<E> next;
 
