@@ -15,6 +15,9 @@ package practice.leetCode.top200;
 
 public class 两数相加 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        while (true){
+            if(l1 == null)
+        }
         return null;
     }
 
