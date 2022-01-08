@@ -10,7 +10,7 @@ import java.util.Map;
  * 你可以按任意顺序返回答案。
  * Created by liaock on 2022/1/7
  **/
-public class 两数之和 {
+public class day1_哈希表_两数之和 {
 
     public int[] twoSum(int[] nums,int target){
         int arr[] = new int[2];
