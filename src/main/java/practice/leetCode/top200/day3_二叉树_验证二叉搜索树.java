@@ -1,5 +1,10 @@
 package practice.leetCode.top200;
 
+import practice.leetCode.base.TreeNode;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * https://leetcode-cn.com/problems/validate-binary-search-tree/
  * 给你一个二叉树的根节点 root ，判断其是否是一个有效的二叉搜索树。
@@ -18,19 +23,32 @@ package practice.leetCode.top200;
 public class day3_二叉树_验证二叉搜索树 {
 
     public boolean isValidBST(TreeNode root) {
-        return false;
+        if(root == null) return true;
+        List<Integer> list = new ArrayList<>();
+        midSearch(root,list);
+        for (int i = 0; i < list.size()-1; i++) {
+            if(list.get(i+1)<= list.get(i)){
+                return false;
+            }
+        }
+        return true;
     }
 
-    private class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode() {}
-      TreeNode(int val) { this.val = val; }
-      TreeNode(int val, TreeNode left, TreeNode right) {
-          this.val = val;
-          this.left = left;
-          this.right = right;
-      }
-  }
+    private void midSearch(TreeNode root, List<Integer> list) {
+            if(root == null) {
+                return;
+            }
+            midSearch(root.left, list);
+            list.add(root.val);
+            midSearch(root.right, list);
+        }
+
+
+    public static void main(String[] args) {
+        int []arr = new int[]{5,1,4,0,0,3,6};
+        day3_二叉树_验证二叉搜索树 day3_tree = new day3_二叉树_验证二叉搜索树();
+        TreeNode treeNode = TreeNode.generateTreeNode(arr, 0);
+        boolean validBST = day3_tree.isValidBST(treeNode);
+        System.out.println(validBST);
+    }
 }
