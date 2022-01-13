@@ -31,6 +31,7 @@ public class day8_双指针_三数之和_important {
                     list.add(nums[right]);
                     set.add(list);
                     left ++;
+                    //right --;
                 }else if(nums[i] + nums[left] + nums[right] < 0){
                     left ++;
                 }else {
@@ -41,12 +42,13 @@ public class day8_双指针_三数之和_important {
         for (List<Integer> list : set) {
             resultList.add(list);
         }
+
         return resultList;
     }
 
     public static void main(String[] args) {
         day8_双指针_三数之和_important obj = new day8_双指针_三数之和_important();
-        System.out.println(obj.threeSum(new int[]{-1,0,1,2,-1,-4}));
+        System.out.println(obj.threeSum(new int[]{-4,-1,-1,0,1,2}));
     }
 
 }
