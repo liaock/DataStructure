@@ -18,6 +18,21 @@ package practice.leetCode.top200;
 public class day4_整数反转 {
 
     public int reverse(int x) {
-        return 0;
+        String s = x + "";
+        String resultStr = "";
+        if(s.substring(0,1).equals("-")){
+            resultStr += "-";
+            s = s.replace("-","");
+        }
+        char[] chars = s.toCharArray();
+        for (int i = chars.length-1 ; i >= 0 ; i--) {
+            resultStr += chars[i];
+        }
+        try {
+            Integer.valueOf(resultStr);
+        } catch (NumberFormatException e) {
+           return 0;
+        }
+        return Integer.valueOf(resultStr);
     }
 }
