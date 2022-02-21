@@ -15,6 +15,7 @@ public class day9_反转链表_important {
             pre = cur;
             cur = tempNode;
         }
+
         return pre;
     }
 
